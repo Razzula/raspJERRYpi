@@ -1,17 +1,17 @@
 # Application data
 containers/**/data/*
-containers/**/config/*
 
 # Keep directory structure in Git
 !containers/**/data/.gitkeep
-!containers/**/config/.gitkeep
 
 # Secrets
-.env
-.env.*
+*.env
+*.env.*
 *.secret
 *.key
 *.pem
+
+!*.env.example
 
 # OS/editor files
 .DS_Store

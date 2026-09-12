@@ -59,11 +59,11 @@ sudo netplan set "ethernets.$EXPECTED_INTERFACE.nameservers.addresses=[$EXPECTED
 
 echo
 echo "Resulting configuration:"
-netplan get
+sudo netplan get
 
 echo
 echo "Netplan will now test the configuration."
-echo "If connectivity is lost, it will automatically roll back."
+echo "(If connectivity is lost, it will automatically roll back.)"
 echo
 
 sudo netplan try

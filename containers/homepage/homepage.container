@@ -6,11 +6,12 @@ After=network-online.target
 [Container]
 Image=ghcr.io/gethomepage/homepage:latest
 ContainerName=homepage
+Network=homelab
 
 PublishPort=3000:3000
 Volume=./config:/app/config
 
-Environment=HOMEPAGE_ALLOWED_HOSTS=192.168.0.2:3000
+Environment=HOMEPAGE_ALLOWED_HOSTS=192.168.0.2
 Environment=TZ=Europe/London
 
 [Service]

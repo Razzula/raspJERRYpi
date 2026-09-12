@@ -6,6 +6,7 @@ After=network-online.target
 [Container]
 Image=docker.io/vaultwarden/server:latest
 ContainerName=vaultwarden
+Network=homelab
 
 PublishPort=8080:80
 Volume=./data:/data

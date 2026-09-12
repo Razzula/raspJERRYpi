@@ -1,0 +1,10 @@
+- Management:
+    - Router:
+        - icon: router.png
+          description: Virgin Media Hub
+          href: "http://192.168.0.1"
+
+    - GitHub:
+        - icon: github.png
+          description: Homelab repository
+          href: "https://github.com/Razzula/raspJERRYpi"

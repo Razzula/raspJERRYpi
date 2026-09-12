@@ -1,0 +1,20 @@
+[Unit]
+Description=Caddy Reverse Proxy
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+Image=localhost/caddy-cloudflare:latest
+ContainerName=caddy
+Network=homelab
+EnvironmentFile=./caddy.env
+PublishPort=80:80
+PublishPort=443:443
+Volume=./Caddyfile:/etc/caddy/Caddyfile:ro
+Volume=./data:/data
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

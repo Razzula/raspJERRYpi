@@ -1,0 +1,22 @@
+# (Default) Homepage
+:80 {
+    reverse_proxy homepage:3000
+}
+
+# Vaultwarden
+vault.razzula.uk {
+    tls {
+        dns cloudflare {env.CLOUDFLARE_TOKEN}
+    }
+
+    reverse_proxy vaultwarden:80
+}
+
+# Wireguard
+vpn.razzula.uk {
+    tls {
+        dns cloudflare {env.CLOUDFLARE_TOKEN}
+    }
+
+    reverse_proxy host.containers.internal:51821
+}
