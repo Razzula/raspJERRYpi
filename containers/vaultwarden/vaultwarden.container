@@ -8,7 +8,7 @@ Image=docker.io/vaultwarden/server:latest
 ContainerName=vaultwarden
 Network=homelab
 
-PublishPort=8080:80
+PublishPort=783:80
 Volume=./data:/data
 
 Environment=TZ=Europe/London

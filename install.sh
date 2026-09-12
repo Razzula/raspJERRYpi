@@ -10,11 +10,11 @@ for container in containers/*; do
     name="$(basename "$container")"
 
     # configure
-    if [[ -x "$container/$name.configure.sh" ]]; then
+    if [[ -x "$container/$name.config.sh" ]]; then
         echo "Configuring: $name"
         (
             cd "$container"
-            "./$name.configure.sh"
+            "./$name.config.sh"
         )
     fi
 

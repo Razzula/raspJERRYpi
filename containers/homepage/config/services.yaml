@@ -7,23 +7,32 @@
     - Caddy:
         icon: caddy.png
         description: Reverse proxy
-        href: "http://192.168.0.2"
         siteMonitor: "http://192.168.0.2"
+
+    - Pi-Hole:
+        icon: pi-hole.png
+        description: DNS server
+        href: "https://vault.razzula.uk:982/admin"
+        siteMonitor: "https://vault.razzula.uk:982"
 
     - WireGuard:
         icon: wireguard.png
         description: VPN server
-        href: "https://vpn.razzula.uk"
-        siteMonitor: "https://vpn.razzula.uk"
+        href: "https://vault.razzula.uk:981"
+        siteMonitor: "https://vault.razzula.uk:981"
+
+    - Cloudflare DDNS:
+        icon: cloudflare.png
+        description: Dynamic DNS updater
 
 - Services:
     - Vaultwarden:
         icon: vaultwarden.png
         description: Password manager
-        href: "https://vault.razzula.uk"
-        siteMonitor: "https://vault.razzula.uk/alive"
+        href: "https://vault.razzula.uk:983"
+        siteMonitor: "https://vault.razzula.uk:983/alive"
 
     - Homepage:
         icon: homepage.png
         description: This dashboard
-        siteMonitor: "http://192.168.0.2:3000"
+        siteMonitor: "http://vault.razzula.uk:980"

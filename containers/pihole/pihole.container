@@ -1,0 +1,24 @@
+[Unit]
+Description=Pi-Hole DNS and DHCP Server
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+Image=docker.io/pihole/pihole:latest
+ContainerName=pihole
+Network=host
+
+Environment=FTLCONF_webserver_port=782
+
+Volume=./config:/etc/pihole
+
+Environment=TZ=Europe/London
+
+AddCapability=NET_ADMIN
+AddCapability=NET_RAW
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

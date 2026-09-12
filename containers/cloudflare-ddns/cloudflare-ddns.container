@@ -1,0 +1,16 @@
+[Unit]
+Description=Cloudflare DDNS
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Image=localhost/cfddns:latest
+ContainerName=cloudflare-ddns
+
+EnvironmentFile=./cloudflare-ddns.env
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

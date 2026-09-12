@@ -4,13 +4,15 @@ Wants=network-online.target
 After=network-online.target
 
 [Container]
-Image=ghcr.io/wg-easy/wg-easy:latest
+Image=ghcr.io/wg-easy/wg-easy:15.4.0
 ContainerName=wireguard
 
 EnvironmentFile=./wireguard.env
 
+# WireGuard VPN — public, unchanged
 PublishPort=51820:51820/udp
-PublishPort=51821:51821/tcp
+# wg-easy web UI — internal bridge
+PublishPort=781:51821/tcp
 
 Volume=./config:/etc/wireguard
 Volume=/lib/modules:/lib/modules:ro

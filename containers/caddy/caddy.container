@@ -7,9 +7,16 @@ After=network-online.target
 Image=localhost/caddy-cloudflare:latest
 ContainerName=caddy
 Network=homelab
+
 EnvironmentFile=./caddy.env
+
 PublishPort=80:80
 PublishPort=443:443
+PublishPort=980:980
+PublishPort=981:981
+PublishPort=982:982
+PublishPort=983:983
+
 Volume=./Caddyfile:/etc/caddy/Caddyfile:ro
 Volume=./data:/data
 

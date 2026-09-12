@@ -1,22 +1,40 @@
 # (Default) Homepage
 :80 {
-    reverse_proxy homepage:3000
+    reverse_proxy host.containers.internal:780
+}
+
+# Homepage
+vault.razzula.uk:980 {
+    tls {
+        dns cloudflare {env.CLOUDFLARE_TOKEN}
+    }
+
+    reverse_proxy host.containers.internal:780
+}
+
+# WireGuard Easy
+vault.razzula.uk:981 {
+    tls {
+        dns cloudflare {env.CLOUDFLARE_TOKEN}
+    }
+
+    reverse_proxy host.containers.internal:781
+}
+
+# Pi-hole
+vault.razzula.uk:982 {
+    tls {
+        dns cloudflare {env.CLOUDFLARE_TOKEN}
+    }
+
+    reverse_proxy host.containers.internal:782
 }
 
 # Vaultwarden
-vault.razzula.uk {
+vault.razzula.uk:983 {
     tls {
         dns cloudflare {env.CLOUDFLARE_TOKEN}
     }
 
-    reverse_proxy vaultwarden:80
-}
-
-# Wireguard
-vpn.razzula.uk {
-    tls {
-        dns cloudflare {env.CLOUDFLARE_TOKEN}
-    }
-
-    reverse_proxy host.containers.internal:51821
+    reverse_proxy host.containers.internal:783
 }

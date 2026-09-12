@@ -1,0 +1,14 @@
+[dhcp]
+active = true
+start = "192.168.0.100"
+end = "192.168.0.249"
+router = "192.168.0.1"
+netmask = "255.255.255.0"
+leaseTime = "24h"
+ipv6 = false
+
+[dns]
+upstreams = [
+    "1.1.1.1",
+    "1.0.0.1"
+]
