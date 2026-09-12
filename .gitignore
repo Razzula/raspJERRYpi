@@ -1,0 +1,20 @@
+# Application data
+containers/**/data/*
+containers/**/config/*
+
+# Keep directory structure in Git
+!containers/**/data/.gitkeep
+!containers/**/config/.gitkeep
+
+# Secrets
+.env
+.env.*
+*.secret
+*.key
+*.pem
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
