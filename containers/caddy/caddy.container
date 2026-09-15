@@ -16,6 +16,7 @@ PublishPort=980:980
 PublishPort=981:981
 PublishPort=982:982
 PublishPort=983:983
+PublishPort=984:984
 
 Volume=./Caddyfile:/etc/caddy/Caddyfile:ro
 Volume=./data:/data

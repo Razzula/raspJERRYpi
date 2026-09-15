@@ -2,6 +2,9 @@
 :80 {
     reverse_proxy host.containers.internal:780
 }
+:443 {
+    reverse_proxy host.containers.internal:780
+}
 
 # Homepage
 vault.razzula.uk:980 {
@@ -37,4 +40,13 @@ vault.razzula.uk:983 {
     }
 
     reverse_proxy host.containers.internal:783
+}
+
+# Caddy
+vault.razzula.uk:984 {
+    tls {
+        dns cloudflare {env.CLOUDFLARE_TOKEN}
+    }
+
+    reverse_proxy caddy:2019
 }
