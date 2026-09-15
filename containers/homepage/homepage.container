@@ -11,6 +11,8 @@ Network=homelab
 PublishPort=780:3000
 Volume=./config:/app/config
 
+EnvironmentFile=./homepage.env
+
 Environment=HOMEPAGE_ALLOWED_HOSTS=vault.razzula.uk:980
 Environment=TZ=Europe/London
 

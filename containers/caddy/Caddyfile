@@ -1,9 +1,15 @@
+{
+    admin 0.0.0.0:784 {
+        origins https://vault.razzula.uk:984
+    }
+}
+
 # (Default) Homepage
 :80 {
     reverse_proxy host.containers.internal:780
 }
 :443 {
-    reverse_proxy host.containers.internal:780
+    reverse_proxy host.containers.internal:980
 }
 
 # Homepage
@@ -48,5 +54,16 @@ vault.razzula.uk:984 {
         dns cloudflare {env.CLOUDFLARE_TOKEN}
     }
 
-    reverse_proxy caddy:2019
+    @config {
+        path /config /config/
+        method GET HEAD
+    }
+
+    handle @config {
+        reverse_proxy caddy:784 {
+            header_up Origin https://vault.razzula.uk:984
+        }
+    }
+
+    respond 403
 }

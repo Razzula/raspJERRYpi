@@ -2,24 +2,40 @@
     - RPi:
         icon: raspberry-pi.png
         description: raspJERRYpi
-        siteMonitor: "http://192.168.0.2"
+        siteMonitor: "https://vault.razzula.uk:983"
 
     - Caddy:
         icon: caddy.png
         description: Reverse proxy
-        siteMonitor: "http://192.168.0.2"
+        href: "https://vault.razzula.uk:984/config/"
+        siteMonitor: "https://vault.razzula.uk:984/config/"
+        # widget:
+        #     type: caddy
+        #     url: "https://vault.razzula.uk:984" # /reverse_proxy/upstreams
 
     - Pi-Hole:
         icon: pi-hole.png
         description: DNS server
         href: "https://vault.razzula.uk:982/admin"
         siteMonitor: "https://vault.razzula.uk:982"
+        # widget:
+        #     type: pihole
+        #     url: "https://vault.razzula.uk:982" # ???
+        #     version: 6
+        #     key: "${PIHOLE_PASSWORD}"
+
 
     - WireGuard:
         icon: wireguard.png
         description: VPN server
         href: "https://vault.razzula.uk:981"
-        siteMonitor: "https://vault.razzula.uk:981"
+        siteMonitor: "http://host.containers.internal:781"
+        # widget:
+        #     type: wgeasy
+        #     url: "https://vault.razzula.uk:981" # /api/client
+        #     version: 2
+        #     username: "${WIREGUARD_USERNAME}"
+        #     password: "${WIREGUARD_PASSWORD}"
 
     - Cloudflare DDNS:
         icon: cloudflare.png
@@ -30,9 +46,9 @@
         icon: vaultwarden.png
         description: Password manager
         href: "https://vault.razzula.uk:983"
-        siteMonitor: "https://vault.razzula.uk:983/alive"
+        siteMonitor: "http://host.containers.internal:783/alive"
 
     - Homepage:
         icon: homepage.png
         description: This dashboard
-        siteMonitor: "http://vault.razzula.uk:980"
+        siteMonitor: "https://vault.razzula.uk:983"
