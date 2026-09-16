@@ -67,3 +67,16 @@ vault.razzula.uk:984 {
 
     respond 403
 }
+
+# BOINC
+vault.razzula.uk:985 {
+    tls {
+        dns cloudflare {env.CLOUDFLARE_TOKEN}
+    }
+
+    reverse_proxy https://host.containers.internal:785 {
+        transport http {
+            tls_insecure_skip_verify
+        }
+    }
+}

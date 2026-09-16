@@ -1,0 +1,22 @@
+[Unit]
+Description=BOINC Client with Web GUI
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Image=docker.io/lsiodev/boinc:arm64v8-latest
+ContainerName=boinc
+
+PublishPort=8080:8080
+PublishPort=785:8181
+
+Volume=./data:/config
+
+EnvironmentFile=./boinc.env
+
+[Service]
+Restart=always
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target
